@@ -1,0 +1,26 @@
+body {
+  font-family: 'Playfair Display';
+}
+
+h1 {
+  color: red;
+  text-align: center;
+}
+
+p {
+  text-align: left;
+}
+
+.container {
+  width: 500px;
+  margin: auto;
+}
+
+.firstdiv {
+  background-color: #333;
+  color: #fff;
+}
+
+.gittest {
+  
+}
