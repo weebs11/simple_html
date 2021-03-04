@@ -12,15 +12,19 @@ p {
 }
 
 .container {
-  width: 500px;
+  width: 80%;
   margin: auto;
+  border: 5px red solid;
 }
 
 .firstdiv {
   background-color: #333;
   color: #fff;
+  margin: auto;
+  padding: 5px;
 }
 
-.gittest {
-
+p.paragraph {
+  color: #fff;
+  padding: 10%;
 }
