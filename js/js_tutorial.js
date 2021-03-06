@@ -23,7 +23,17 @@ const y = undefined
 console.log(s.toLowerCase());
 console.log(s.substring(0, 5).toUpperCase());
 console.log(s.split(', ')); */
-//testing end
+// testing end
 
-// Arrays
+// Arrays - variables that hold multiple values
 
+const fruits = ['apples','oranges','pears'];
+
+fruits[3] = 'grapes';
+fruits.unshift('strawberries');
+fruits.push('mangos');
+fruits.pop('mangos');
+
+
+console.log(fruits);
+console.log(fruits.indexOf('oranges'));
