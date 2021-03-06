@@ -27,13 +27,14 @@ console.log(s.split(', ')); */
 
 // Arrays - variables that hold multiple values
 
-const fruits = ['apples','oranges','pears'];
+// testing begin
+/* const fruits = ['apples','oranges','pears'];
 
 fruits[3] = 'grapes';
 fruits.unshift('strawberries');
 fruits.push('mangos');
 fruits.pop('mangos');
 
-
 console.log(fruits);
-console.log(fruits.indexOf('oranges'));
+console.log(fruits.indexOf('oranges')); */
+// testing end
