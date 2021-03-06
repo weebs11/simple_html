@@ -204,7 +204,7 @@ END CODE - Conditionals */
 
 // Functions
 
-// STARRT CODE - Functions
+/* START CODE - Functions
 
 function addNums(num1 = 1, num2 = 1) {
     return num1 + num2;
@@ -216,4 +216,61 @@ console.log(addNums(5, 5));
 //addNumsArrow(3, 2);
 
 const addNumsArrow = (num1 = 1, num2 = 1) => num1 + num2;
-console.log(addNumsArrow(3,2));
+console.log(addNumsArrow);
+
+// Object oriented programming
+
+//Constructor function
+
+function Person(firstName, lastName, dob) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dob = new Date(dob);
+}
+
+// Prototypes
+Person.prototype.getBirthYear = function() {
+    return this.dob.getFullYear();
+}
+
+Person.prototype.getFullName = function() {
+    return `${this.firstName} ${this.lastName}`
+}
+
+// Instantiate object
+const person1 = new Person('John', 'Doe', '4-3-1980');
+const person2 = new Person('Kelly', 'Wehbi', '2-11-1987');
+
+console.log(person1, person2);
+
+console.log(person2.getBirthYear()); 
+console.log(person2.getFullName()); 
+
+
+// Classes and methods
+class Person {
+    constructor(firstName, lastName, dob) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = new Date(dob);
+    }
+
+    getBirthYear() {
+        return this.dob.getFullYear();  
+    }
+
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`
+    }
+}
+
+const person1 = new Person('John', 'Doe', '4-3-1980');
+const person2 = new Person('Kelly', 'Wehbi', '2-11-1987');
+
+console.log(person1, person2);
+
+END CODE - Functions */
+
+// The DOM
+
+// START CODE - DOM
