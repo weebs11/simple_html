@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX 1 - Text File</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body>
+
+    <section class="container">
+        
+        <h1 class="display-5">
+            AJAX Testing            
+            <small class="text-muted">This is my secret space</small>
+        </h1>
+        
+        <captioncard class="card" style="width: 18rem">
+            <div class="card-body">
+                <blockquote class="blockquote">
+                    <p>
+                        This is where I'm triggering my AJAX requests.
+                    </p>
+                    <blockcaption class="blockquote-footer">
+                        Using this button below.
+                    </blockcaption>
+                </blockquote>
+                <div class="d-grid gap-2 mx-auto">
+                    <button id="ajax1" class="btn btn-primary" type="button">Get Text File</button>
+                </div>
+            </div>
+        </captioncard>
+        <div id="text">
+            <p>This is where my AJAX text will go.</p>
+        </div>
+    </section>
+
+    <script>
+        // Create event listener
+        document.getElementById('ajax1').addEventListener('click', loadText);
+
+        function loadText() {
+            // Create XHR Object
+            var xhr = new XMLHttpRequest();
+            // OPEN - type, url/file, async
+            xhr.open('GET', 'sample.txt', true);
+
+            // OPTIONAL - used for loading spinners
+            // xhr.onprogress = function() {
+            //    console.log('READYSTATE: ', xhr.readyState);
+            // }
+
+            xhr.onload = function() {
+                if(this.status == 200) {
+                    console.log(this.responseText);
+                    document.getElementById('text').innerHTML = this.responseText;
+                }
+                else if(this.status == 404) {
+                    document.getElementById('text').innerHTML = "You've made a mistake. Nothing is here.";
+                }
+            }
+            
+            // This is how you can check for an error. To trigger, change the sample.txt file name.
+            xhr.onerror = function() {
+                console.log('Request error');
+            }
+            
+            // Sends request
+            xhr.send();
+        }
+
+        // HTTP Statuses
+        // 200: "OK"
+        // 403: "Forbidden"
+        // 404: "Not Found"
+    </script>
+ 
+</body>
+</html>
